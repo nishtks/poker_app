@@ -1,0 +1,61 @@
+<h1>Cards#top</h1>
+
+<%= form_tag("/cards/submit") do %>
+<input type="string" name="content" > <%# contentがParamsで運ばれる　%>
+<input type="submit" value="約判定させて〜や">
+<% end %>
+
+<% if @card %>
+    <h3>your card</h3> 
+   <%= @card %>
+<% end %>
+
+<br>
+<h3>約判定</h3>
+<% if @j_message %>
+<%= @j_message %>
+<% elsif %>
+エラーあるから約判定無理！
+<% end %>
+
+<% if false %> <%# ブロックでコメントアウト%>
+    <h3>カード整理</h3>
+    カード：<%= @card %>
+    <br>
+    配列：<%= @card_array %>
+    <br>
+    枚数：<%= @card_count %>
+    <br>
+    数字：<%=@card_num %>
+    <br>
+    スート：<%=@card_suit %>
+    <br>
+    数字カウント詳細：<%=@num_count_detail %>
+    <br>
+    スートカウント詳細：<%=@suit_count_detail %>
+    <br>
+    s：<%=@s %>
+<% end %>
+
+
+<br>
+<h3>error 確認</h3> 
+<% if @v_message1 %>
+    !!error!!
+    <br>
+    <%= @v_message1 %>
+<% end %>
+<br>
+<% if @v_message2 %>
+    !!error!!
+    <br>
+    <%= @v_message2 %>
+<% end %>
+<br>
+
+<% if @v_message3 %>
+    !!error!!
+    <br>
+    <%= @v_message3 %>
+<% end %>
+
